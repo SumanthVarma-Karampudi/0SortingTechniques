@@ -1,0 +1,27 @@
+#include<iostream>
+using namespace std;
+
+void selectionsort(int a[],int n){
+    //finding min element
+ for(int j=0;j<n;j++){
+    int min=a[j];
+    int minindex=j;
+    for(int i=j;i<n;i++){
+        if(a[i]<min){
+            min=a[i];
+            minindex=i;
+            }
+        }
+    //swapping 
+    int temp=a[j];
+    a[j]=a[minindex];
+    a[minindex]=temp;
+ }
+}
+int main(){
+    int a[5]={3,54,2,4,25};
+    selectionsort(a,5);
+    for(int i=0;i<5;i++){
+        cout<<a[i]<<" ";
+    }
+}
