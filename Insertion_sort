@@ -1,0 +1,26 @@
+---------------------------------------------------------------------------Insertion sort---------------------------------------------------------------------------------
+#include<iostream>
+using namespace std;
+
+void insertionsort(int a[],int n){              
+   for(int i=1;i<n;i++){                     //In Insertion sort, we start from 1st index and check for the best position in the left part of the array(i-1 to 0)
+    int curr=a[i],j;
+    for(j=i-1;j>=0;j--){
+      if(curr<a[j]){
+        a[j+1]=a[j];
+      }
+      else{                                 //If curr>a[j], we come out of the loop because as all elements left to the present comparing jth index will be less than a[j]
+        break;
+      }
+    }
+    a[j+1]=curr;
+}
+}
+
+int main(){
+    int a[5]={309,54,2,567,25};
+    insertionsort(a,5);
+    for(int i=0;i<5;i++){
+        cout<<a[i]<<" ";
+    }
+}
