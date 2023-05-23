@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+//logic here is that - we look for the non-zero element and we place them from beginning =>results in zeroes in the ending
+void pushZeroesEnd(int *input, int n){     
+    int j=0;
+    for(int i=0;i<n;i++){
+        if(input[i]!=0){
+            int temp=input[i];
+            input[i]=input[j];
+            input[j++]=temp;
+        }
+    }
+}
+
+int main()
+{
+
+	int t;
+	cin >> t;
+	
+	while (t--)
+	{
+
+		int size;
+
+		cin >> size;
+		int *input = new int[size];
+
+		for (int i = 0; i < size; i++)
+		{
+			cin >> input[i];
+		}
+
+		pushZeroesEnd(input, size);
+
+		for (int i = 0; i < size; i++)
+		{
+			cout << input[i] << " ";
+		}
+
+		cout << endl;
+		delete[] input;
+	}
+
+	return 0;
+}
