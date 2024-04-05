@@ -14,7 +14,7 @@ void insertionsort(int a[],int n){
       }
     }
     a[j+1]=curr;
-}
+  }
 }
 
 int main(){
